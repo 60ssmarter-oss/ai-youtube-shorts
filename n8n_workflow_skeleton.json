@@ -1,0 +1,13 @@
+{
+  "name": "AI Shorts Automation Skeleton",
+  "nodes": [
+    {"name": "Daily Trigger", "type": "n8n-nodes-base.scheduleTrigger", "notes": "Runs daily or multiple times per day"},
+    {"name": "Pick Topic", "type": "n8n-nodes-base.spreadsheetFile", "notes": "Read next topic from topics.csv or Google Sheet"},
+    {"name": "Generate Script", "type": "n8n-nodes-base.httpRequest", "notes": "Call your chosen free/local LLM endpoint"},
+    {"name": "Generate Voice", "type": "n8n-nodes-base.executeCommand", "notes": "Run Kokoro/Piper TTS locally"},
+    {"name": "Build Video", "type": "n8n-nodes-base.executeCommand", "notes": "Run python make_short.py"},
+    {"name": "Create Metadata", "type": "n8n-nodes-base.httpRequest", "notes": "Generate title, description, hashtags"},
+    {"name": "Upload or Save", "type": "n8n-nodes-base.googleDrive", "notes": "Save output, or connect YouTube upload API"}
+  ],
+  "connections": {}
+}
