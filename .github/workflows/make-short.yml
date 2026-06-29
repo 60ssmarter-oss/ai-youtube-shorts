@@ -22,7 +22,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Install Python packages
-        run: pip install moviepy pillow numpy
+        run: pip install moviepy==1.0.3 pillow numpy
 
       - name: Make video
         run: python make_short.py
